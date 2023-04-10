@@ -1,0 +1,59 @@
+Item name,Minimum Value,Maximum Value,Item Type
+Chain Shirt,38 gp,75 gp,Medium Armor
+Scale Mail,38 gp,75 gp,Medium Armor
+Breastplate,300 gp,600 gp,Medium Armor
+Half Plate,562 gp,1125 gp,Medium Armor
+Ring Mail,22 gp,45 gp,Heavy Armor
+Chain Mail,56 gp,113 gp,Heavy Armor
+Splint,150 gp,300 gp,Heavy Armor
+Plate,1125 gp,2250 gp,Heavy Armor
+Shield,7 gp,15 gp,Heavy Armor
+Dagger,1 gp,3 gp,Small Weapon
+Handaxe,3 gp,8 gp,Small Weapon
+Javelin,3 gp,8 gp,Small Weapon
+Light Hammer,1 gp,3 gp,Small Weapon
+Mace,3 gp,8 gp,Small Weapon
+Sickle,7 sp,2 gp,Small Weapon
+Spear,7 sp,2 gp,Small Weapon
+Battleaxe,7 gp,15 gp,Big Weapon
+Flail,7 gp,15 gp,Big Weapon
+Glaive,15 gp,30 gp,Big Weapon
+Greataxe,22 gp,45 gp,Big Weapon
+Greatsword,38 gp,75 gp,Big Weapon
+Halberd,15 gp,30 gp,Big Weapon
+Lance,7 gp,15 gp,Big Weapon
+Longsword,11 gp,22 gp,Big Weapon
+Maul,7 gp,15 gp,Big Weapon
+Morningstar,11 gp,22 gp,Big Weapon
+Pike,3 gp,8 gp,Big Weapon
+Rapier,18 gp,38 gp,Big Weapon
+Scimitar,18 gp,38 gp,Big Weapon
+Shortsword,7 gp,15 gp,Big Weapon
+Trident,3 gp,8 gp,Big Weapon
+War Pick,3 gp,8 gp,Big Weapon
+Warhammer,11 gp,22 gp,Big Weapon
+"Ball Bearings (bag of 1,000)",7 sp,2 gp,Normal Item
+Bell,7 sp,2 gp,Normal Item
+Block and Tackle,7 sp,2 gp,Normal Item
+Chain (10 feet),3 gp,8 gp,Normal Item
+Crowbar,1 gp,3 gp,Normal Item
+Grappling Hook,1 gp,3 gp,Normal Item
+Hammer,7 sp,2 gp,Normal Item
+"Hammer, Sledge",1 gp,3 gp,Normal Item
+Hunting Trap,3 gp,8 gp,Normal Item
+Lamp,3 sp,8 sp,Normal Item
+"Lantern, Bullseye",7 gp,15 gp,Normal Item
+"Lantern, Hooded",3 gp,8 gp,Normal Item
+Lock,7 gp,15 gp,Normal Item
+Manacles,1 gp,3 gp,Normal Item
+"Mirror, Steel",3 gp,8 gp,Normal Item
+"Pick, Miner's",1 gp,3 gp,Normal Item
+Piton,3 cp,8 cp,Normal Item
+"Pot, Iron",1 gp,3 gp,Normal Item
+"Spikes, Iron",7 sp,2 gp,Normal Item
+Whetstone,1 cp,2 cp,Normal Item
+Carpenter's Tools,6 gp,12 gp,Normal Tool
+Mason's Tools,7 gp,15 gp,Normal Tool
+Smith's Tools,15 gp,30 gp,Normal Tool
+Tinker's Tools,38 gp,75 gp,Normal Tool
+Horn,2 gp,5 gp,Special Item
