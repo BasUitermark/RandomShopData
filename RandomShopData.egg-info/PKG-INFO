@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: RandomShopData
+Version: 0.1
+Summary: A small program that creates randomized shop data for TRPG
+Author: Bas Uitermark
+Requires-Python: >=3.10

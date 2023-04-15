@@ -1,59 +1,59 @@
-Item name,Minimum Value,Maximum Value,Item Type
-Chain Shirt,38 gp,75 gp,Medium Armor
-Scale Mail,38 gp,75 gp,Medium Armor
-Breastplate,300 gp,600 gp,Medium Armor
-Half Plate,562 gp,1125 gp,Medium Armor
-Ring Mail,22 gp,45 gp,Heavy Armor
-Chain Mail,56 gp,113 gp,Heavy Armor
-Splint,150 gp,300 gp,Heavy Armor
-Plate,1125 gp,2250 gp,Heavy Armor
-Shield,7 gp,15 gp,Heavy Armor
-Dagger,1 gp,3 gp,Small Weapon
-Handaxe,3 gp,8 gp,Small Weapon
-Javelin,3 gp,8 gp,Small Weapon
-Light Hammer,1 gp,3 gp,Small Weapon
-Mace,3 gp,8 gp,Small Weapon
-Sickle,7 sp,2 gp,Small Weapon
-Spear,7 sp,2 gp,Small Weapon
-Battleaxe,7 gp,15 gp,Big Weapon
-Flail,7 gp,15 gp,Big Weapon
-Glaive,15 gp,30 gp,Big Weapon
-Greataxe,22 gp,45 gp,Big Weapon
-Greatsword,38 gp,75 gp,Big Weapon
-Halberd,15 gp,30 gp,Big Weapon
-Lance,7 gp,15 gp,Big Weapon
-Longsword,11 gp,22 gp,Big Weapon
-Maul,7 gp,15 gp,Big Weapon
-Morningstar,11 gp,22 gp,Big Weapon
-Pike,3 gp,8 gp,Big Weapon
-Rapier,18 gp,38 gp,Big Weapon
-Scimitar,18 gp,38 gp,Big Weapon
-Shortsword,7 gp,15 gp,Big Weapon
-Trident,3 gp,8 gp,Big Weapon
-War Pick,3 gp,8 gp,Big Weapon
-Warhammer,11 gp,22 gp,Big Weapon
-"Ball Bearings (bag of 1,000)",7 sp,2 gp,Normal Item
-Bell,7 sp,2 gp,Normal Item
-Block and Tackle,7 sp,2 gp,Normal Item
-Chain (10 feet),3 gp,8 gp,Normal Item
-Crowbar,1 gp,3 gp,Normal Item
-Grappling Hook,1 gp,3 gp,Normal Item
-Hammer,7 sp,2 gp,Normal Item
-"Hammer, Sledge",1 gp,3 gp,Normal Item
-Hunting Trap,3 gp,8 gp,Normal Item
-Lamp,3 sp,8 sp,Normal Item
-"Lantern, Bullseye",7 gp,15 gp,Normal Item
-"Lantern, Hooded",3 gp,8 gp,Normal Item
-Lock,7 gp,15 gp,Normal Item
-Manacles,1 gp,3 gp,Normal Item
-"Mirror, Steel",3 gp,8 gp,Normal Item
-"Pick, Miner's",1 gp,3 gp,Normal Item
-Piton,3 cp,8 cp,Normal Item
-"Pot, Iron",1 gp,3 gp,Normal Item
-"Spikes, Iron",7 sp,2 gp,Normal Item
-Whetstone,1 cp,2 cp,Normal Item
-Carpenter's Tools,6 gp,12 gp,Normal Tool
-Mason's Tools,7 gp,15 gp,Normal Tool
-Smith's Tools,15 gp,30 gp,Normal Tool
-Tinker's Tools,38 gp,75 gp,Normal Tool
-Horn,2 gp,5 gp,Special Item
+Item Name,Current Value,Minimum Value,Maximum Value,Item Type,Region Wealth
+Chain Shirt,38 gp,38 gp,75 gp,Armor;Medium,0.7
+Scale Mail,38 gp,38 gp,75 gp,Armor;Medium,0.7
+Breastplate,300 gp,300 gp,600 gp,Armor;Medium,0.7
+Half Plate,562 gp,562 gp,1125 gp,Armor;Medium,0.7
+Ring Mail,22 gp,22 gp,45 gp,Armor;Heavy,0.7
+Chain Mail,56 gp,56 gp,113 gp,Armor;Heavy,0.7
+Splint,150 gp,150 gp,300 gp,Armor;Heavy,0.7
+Plate,1125 gp,1125 gp,2250 gp,Armor;Heavy,0.7
+Shield,7 gp,7 gp,15 gp,Armor;Heavy,0.7
+Dagger,1 gp,1 gp,3 gp,Weapon;Small,0.7
+Handaxe,3 gp,3 gp,8 gp,Weapon;Small,0.7
+Javelin,3 gp,3 gp,8 gp,Weapon;Small,0.7
+Light Hammer,1 gp,1 gp,3 gp,Weapon;Small,0.7
+Mace,3 gp,3 gp,8 gp,Weapon;Small,0.7
+Sickle,7 sp,7 sp,2 gp,Weapon;Small,0.7
+Spear,7 sp,7 sp,2 gp,Weapon;Small,0.7
+Battleaxe,7 gp,7 gp,15 gp,Weapon;Big,0.7
+Flail,7 gp,7 gp,15 gp,Weapon;Big,0.7
+Glaive,15 gp,15 gp,30 gp,Weapon;Big,0.7
+Greataxe,22 gp,22 gp,45 gp,Weapon;Big,0.7
+Greatsword,38 gp,38 gp,75 gp,Weapon;Big,0.7
+Halberd,15 gp,15 gp,30 gp,Weapon;Big,0.7
+Lance,7 gp,7 gp,15 gp,Weapon;Big,0.7
+Longsword,11 gp,11 gp,22 gp,Weapon;Big,0.7
+Maul,7 gp,7 gp,15 gp,Weapon;Big,0.7
+Morningstar,11 gp,11 gp,22 gp,Weapon;Big,0.7
+Pike,3 gp,3 gp,8 gp,Weapon;Big,0.7
+Rapier,18 gp,18 gp,38 gp,Weapon;Big,0.7
+Scimitar,18 gp,18 gp,38 gp,Weapon;Big,0.7
+Shortsword,7 gp,7 gp,15 gp,Weapon;Big,0.7
+Trident,3 gp,3 gp,8 gp,Weapon;Big,0.7
+War Pick,3 gp,3 gp,8 gp,Weapon;Big,0.7
+Warhammer,11 gp,11 gp,22 gp,Weapon;Big,0.7
+"Ball Bearings (bag of 1,000)",7 sp,7 sp,2 gp,Item;Normal,0.7
+Bell,7 sp,7 sp,2 gp,Item;Normal,0.7
+Block and Tackle,7 sp,7 sp,2 gp,Item;Normal,0.7
+Chain (10 feet),3 gp,3 gp,8 gp,Item;Normal,0.7
+Crowbar,1 gp,1 gp,3 gp,Item;Normal,0.7
+Grappling Hook,1 gp,1 gp,3 gp,Item;Normal,0.7
+Hammer,7 sp,7 sp,2 gp,Item;Normal,0.7
+"Hammer, Sledge",1 gp,1 gp,3 gp,Item;Normal,0.7
+Hunting Trap,3 gp,3 gp,8 gp,Item;Normal,0.7
+Lamp,3 sp,3 sp,8 sp,Item;Normal,0.7
+"Lantern, Bullseye",7 gp,7 gp,15 gp,Item;Normal,0.7
+"Lantern, Hooded",3 gp,3 gp,8 gp,Item;Normal,0.7
+Lock,7 gp,7 gp,15 gp,Item;Normal,0.7
+Manacles,1 gp,1 gp,3 gp,Item;Normal,0.7
+"Mirror, Steel",3 gp,3 gp,8 gp,Item;Normal,0.7
+"Pick, Miner's",1 gp,1 gp,3 gp,Item;Normal,0.7
+Piton,3 cp,3 cp,8 cp,Item;Normal,0.7
+"Pot, Iron",1 gp,1 gp,3 gp,Item;Normal,0.7
+"Spikes, Iron",7 sp,7 sp,2 gp,Item;Normal,0.7
+Whetstone,1 cp,1 cp,2 cp,Item;Normal,0.7
+Carpenter's Tools,6 gp,6 gp,12 gp,Tool;Normal,0.7
+Mason's Tools,7 gp,7 gp,15 gp,Tool;Normal,0.7
+Smith's Tools,15 gp,15 gp,30 gp,Tool;Normal,0.7
+Tinker's Tools,38 gp,38 gp,75 gp,Tool;Normal,0.7
+Horn,2 gp,2 gp,5 gp,Item;Special,0.7

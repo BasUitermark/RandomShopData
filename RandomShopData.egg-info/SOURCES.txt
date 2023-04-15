@@ -1,0 +1,9 @@
+RandomShopData.py
+rsdLibrary.py
+setup.py
+RandomShopData.egg-info/PKG-INFO
+RandomShopData.egg-info/SOURCES.txt
+RandomShopData.egg-info/dependency_links.txt
+RandomShopData.egg-info/entry_points.txt
+RandomShopData.egg-info/requires.txt
+RandomShopData.egg-info/top_level.txt
