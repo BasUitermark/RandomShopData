@@ -37,7 +37,7 @@ class Shop(Base):
 class ItemType(Base):
     __tablename__ = "item_types"
     id = Column(Integer, primary_key=True)
-    type = Column(String)
+    item_type = Column(String)
     sub_type = Column(String)
     min_amount = Column(Integer)
     max_amount = Column(Integer)
