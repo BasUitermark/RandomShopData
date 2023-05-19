@@ -1,0 +1,60 @@
+item name,current price,minimum price,maximum price,current amount,item type
+Studded Leather,33 gp,33 gp,68 gp,0,Armor;Light
+Chain Shirt,38 gp,38 gp,75 gp,0,Armor;Medium
+Scale Mail,38 gp,38 gp,75 gp,0,Armor;Medium
+Breastplate,300 gp,300 gp,600 gp,0,Armor;Heavy
+Half Plate,562 gp,562 gp,1125 gp,0,Armor;Heavy
+Ring Mail,22 gp,22 gp,45 gp,0,Armor;Medium
+Chain Mail,56 gp,56 gp,113 gp,0,Armor;Medium
+Splint,150 gp,150 gp,300 gp,0,Armor;Heavy
+Plate,1125 gp,1125 gp,2250 gp,0,Armor;Heavy
+Shield,7 gp,7 gp,15 gp,0,Armor;Medium
+Dagger,1 gp,1 gp,3 gp,0,Weapon;Small
+Handaxe,3 gp,3 gp,8 gp,0,Weapon;Small
+Javelin,3 gp,3 gp,8 gp,0,Weapon;Small
+Light Hammer,1 gp,1 gp,3 gp,0,Weapon;Small
+Mace,3 gp,3 gp,8 gp,0,Weapon;Small
+Sickle,7 sp,7 sp,2 gp,0,Weapon;Small
+Spear,7 sp,7 sp,2 gp,0,Weapon;Small
+Battleaxe,7 gp,7 gp,15 gp,0,Weapon;Big
+Flail,7 gp,7 gp,15 gp,0,Weapon;Big
+Glaive,15 gp,15 gp,30 gp,0,Weapon;Big
+Greataxe,22 gp,22 gp,45 gp,0,Weapon;Big
+Greatsword,38 gp,38 gp,75 gp,0,Weapon;Big
+Halberd,15 gp,15 gp,30 gp,0,Weapon;Big
+Lance,7 gp,7 gp,15 gp,0,Weapon;Big
+Longsword,11 gp,11 gp,22 gp,0,Weapon;Big
+Maul,7 gp,7 gp,15 gp,0,Weapon;Big
+Morningstar,11 gp,11 gp,22 gp,0,Weapon;Big
+Pike,3 gp,3 gp,8 gp,0,Weapon;Big
+Rapier,18 gp,18 gp,38 gp,0,Weapon;Big
+Scimitar,18 gp,18 gp,38 gp,0,Weapon;Big
+Shortsword,7 gp,7 gp,15 gp,0,Weapon;Big
+Trident,3 gp,3 gp,8 gp,0,Weapon;Big
+War Pick,3 gp,3 gp,8 gp,0,Weapon;Big
+Warhammer,11 gp,11 gp,22 gp,0,Weapon;Big
+"Ball Bearings (bag of 1,000)",7 sp,7 sp,2 gp,0,Item;Normal
+Bell,7 sp,7 sp,2 gp,0,Item;Normal
+Block and Tackle,7 sp,7 sp,2 gp,0,Item;Normal
+Chain (10 feet),3 gp,3 gp,8 gp,0,Item;Normal
+Crowbar,1 gp,1 gp,3 gp,0,Item;Normal
+Grappling Hook,1 gp,1 gp,3 gp,0,Item;Normal
+Hammer,7 sp,7 sp,2 gp,0,Item;Normal
+"Hammer, Sledge",1 gp,1 gp,3 gp,0,Item;Normal
+Hunting Trap,3 gp,3 gp,8 gp,0,Item;Normal
+Lamp,3 sp,3 sp,8 sp,0,Item;Normal
+"Lantern, Bullseye",7 gp,7 gp,15 gp,0,Item;Normal
+"Lantern, Hooded",3 gp,3 gp,8 gp,0,Item;Normal
+Lock,7 gp,7 gp,15 gp,0,Item;Normal
+Manacles,1 gp,1 gp,3 gp,0,Item;Normal
+"Mirror, Steel",3 gp,3 gp,8 gp,0,Item;Normal
+"Pick, Miner's",1 gp,1 gp,3 gp,0,Item;Normal
+Piton,3 cp,3 cp,8 cp,0,Item;Normal
+"Pot, Iron",1 gp,1 gp,3 gp,0,Item;Normal
+"Spikes, Iron",7 sp,7 sp,2 gp,0,Item;Normal
+Whetstone,1 cp,1 cp,2 cp,0,Item;Normal
+Carpenter's Tools,6 gp,6 gp,12 gp,0,Item;Tool
+Mason's Tools,7 gp,7 gp,15 gp,0,Item;Tool
+Smith's Tools,15 gp,15 gp,30 gp,0,Item;Tool
+Tinker's Tools,38 gp,38 gp,75 gp,0,Item;Tool
+Horn,2 gp,2 gp,5 gp,0,Item;Special
