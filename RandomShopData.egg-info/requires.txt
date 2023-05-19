@@ -1,4 +1,0 @@
-pandas
-termcolor
-simple-term-menu
-scipy
