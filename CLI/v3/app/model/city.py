@@ -16,8 +16,7 @@ class City(Base):
     inflation_rate = Column(Float)
     interest_rate = Column(Float)
     
-    kingdom_id = Column(Integer, ForeignKey('kingdom.id'), nullable=False)
-    kingdom = relationship("Kingdom", back_populates="cities", nullable=False)
+    kingdom_id = Column(Integer, ForeignKey('kingdoms.id'))
     
     shops = relationship("City", back_populates="shop")
     
@@ -27,3 +26,5 @@ class City(Base):
                 economic_strength={self.economic_strength}, politcal_stability={self.political_stability}, \
                 inflation_rate={self.inflation_rate}, interest_rate={self.interest_rate}, \
                 kingdom={self.kingdom}, shops={self.shops})>"
+                
+# Base.metadata.tables[City.__tablename__] = City.__table__

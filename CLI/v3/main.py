@@ -1,16 +1,13 @@
-from sqlalchemy.exc import OperationalError
+import os
 from termcolor import colored
-from initialize_database import init_db, Session
+from initialize_database import init_db
+from 
 
 def main():
-    try:
-        session = Session()
-        session.close()
-    except OperationalError:
+    if not os.path.exists("virtual_economy.sqlite"):
         print(colored("Database not found. Creating a new database...", 'yellow'))
         init_db()
-    
-    # Continue with rest of your application
+    display_menu()
 
 if __name__ == "__main__":
     main()

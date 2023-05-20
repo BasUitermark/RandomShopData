@@ -1,8 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from termcolor import colored
-
-from app.model.base import Base
+from app.model.tables import Base
 
 DATABASE_NAME = "virtual_economy.sqlite"
 engine = create_engine("sqlite:///" + DATABASE_NAME)

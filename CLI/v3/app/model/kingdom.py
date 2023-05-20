@@ -22,3 +22,5 @@ class Kingdom(Base):
                 economic_strength={self.economic_strength}, politcal_stability={self.political_stability}, \
                 inflation_rate={self.inflation_rate}, interest_rate={self.interest_rate}, \
                 cities={self.cities})>"
+
+# Base.metadata.tables[Kingdom.__tablename__] = Kingdom.__table__

@@ -12,4 +12,5 @@ class Item(Base):
 	max_price = Column(Float, nullable=False)
 	current_amount = Column(Float, nullable=False)
 	item_type_id = Column(Integer, ForeignKey('item_types.id'), nullable=False)
-	shop_id = Column(Integer, ForeignKey('shops.id'), nullable=False)
+
+	shop_id = Column(Integer, ForeignKey('shops.id'))

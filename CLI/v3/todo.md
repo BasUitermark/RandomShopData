@@ -1,5 +1,8 @@
-- Add a merchant database with
+- Merchant database:
 	Name
 	Gender
 	Age
 	Race
+
+- Simulation:
+	calculate exchange rate
