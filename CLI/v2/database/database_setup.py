@@ -7,8 +7,6 @@ DATABASE_NAME = "virtual_economy.sqlite"
 engine = create_engine("sqlite:///" + DATABASE_NAME)
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
-session = Session()
-
 
 class Country(Base):
     __tablename__ = "countries"
