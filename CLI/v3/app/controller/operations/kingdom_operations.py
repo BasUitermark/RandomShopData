@@ -2,6 +2,10 @@ from termcolor import colored
 from sqlalchemy.orm import Session
 from app.model.kingdom import Kingdom
 
+def handle_kingdom(action, session, context):
+    print("Handeling Kingdom")
+    print(action, session, context)
+
 def add_kingdom(session: Session, name: str, demand: int, supply: int, economic_strength: float, political_stability: float, inflation_rate: float, interest_rate: float):
     new_kingdom = Kingdom(name=name, demand=demand, supply=supply, economic_strength=economic_strength, political_stability=political_stability, inflation_rate=inflation_rate, interest_rate=interest_rate)
     session.add(new_kingdom)

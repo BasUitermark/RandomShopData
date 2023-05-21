@@ -8,3 +8,4 @@ class ShopType(Base):
 
     id = Column(Integer, primary_key=True)
     shop_type = Column(String, nullable=False)
+    shops = relationship('Shop', back_populates='shop_type')
