@@ -2,7 +2,7 @@ import os
 import csv
 from termcolor import colored
 from database.database_operation import *
-from .functions import create_menu, select_city_menu, select_country_menu, convert_currency_to_copper
+from .functions import basic_menu, select_city_menu, select_country_menu, convert_currency_to_copper
 
 def import_item_list():
     import_folder = 'import'
@@ -42,7 +42,7 @@ def import_item_list():
 def select_csv_file(import_files):
     menu_title = "Choose CSV File to Import:"
     menu_items = [f[:-4] for f in import_files]
-    menu = create_menu(menu_title, menu_items)
+    menu = basic_menu(menu_title, menu_items)
     file_index = menu.show()
     return import_files[file_index]
 

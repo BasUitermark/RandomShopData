@@ -1,9 +1,9 @@
-from base_handler import BaseHandler
+from .base_handler import BaseHandler
 from model.city import City
 
 class CityHandler(BaseHandler):
-    def add(self, session, city_name, city_population, kingdom_id):
-        new_city = City(name=city_name, population=city_population,kingdom_id=kingdom_id)
+    def add(self, session, city_name, city_population, city_wealth, kingdom_id):
+        new_city = City(name=city_name, population=city_population, wealth=city_wealth, kingdom_id=kingdom_id)
         session.add(new_city)
         session.commit()
 

@@ -6,7 +6,7 @@ import pandas as pd
 def show_tables_menu():
 	select_menu_titel = "Select an option"
 	select_menu_items = ["Show Countries", "Show Cities", "Show Shops", "Show Items", "Back"]
-	select_menu = create_menu(select_menu_titel, select_menu_items)
+	select_menu = basic_menu(select_menu_titel, select_menu_items)
 	
 	index = select_menu.show()
 	if index == 0:

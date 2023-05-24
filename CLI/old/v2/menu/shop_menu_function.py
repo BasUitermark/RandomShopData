@@ -1,5 +1,5 @@
 from database.database_operation import *
-from .functions import create_menu, select_country_menu, select_city_menu
+from .functions import basic_menu, select_country_menu, select_city_menu
 from termcolor import colored
 
 
@@ -26,7 +26,7 @@ def remove_shop_prompt():
 
     shop_menu_items = [f"{shop.name}" for shop in shops]
     shop_menu_items.append("Back")
-    shop_menu = create_menu("Select a shop to remove", shop_menu_items)
+    shop_menu = basic_menu("Select a shop to remove", shop_menu_items)
     shop_choice = shop_menu.show()
 
     if shop_choice == len(shop_menu_items) - 1:
@@ -44,7 +44,7 @@ def edit_shop_prompt():
 
     shop_menu_items = [f"{shop.name}" for shop in shops]
     shop_menu_items.append("Back")
-    shop_menu = create_menu("Select a shop to edit", shop_menu_items)
+    shop_menu = basic_menu("Select a shop to edit", shop_menu_items)
     shop_choice = shop_menu.show()
 
     if shop_choice == len(shop_menu_items) - 1:
@@ -68,7 +68,7 @@ def manage_shops():
     while True:
         shop_menu_title = "Manage Shops"
         shop_menu_items = ["Add Shop", "Remove Shop", "Edit Shop", "Back"]
-        shop_menu = create_menu(shop_menu_title, shop_menu_items)
+        shop_menu = basic_menu(shop_menu_title, shop_menu_items)
         shop_choice = shop_menu.show()
 
         if shop_choice == 0:

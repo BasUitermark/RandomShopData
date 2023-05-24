@@ -9,7 +9,7 @@ def manage_countries():
 	while True:
 		menu_title = "Manage Countries"
 		menu_items = ["Add Country", "Remove Country", "Back"]
-		menu = create_menu(menu_title, menu_items)
+		menu = basic_menu(menu_title, menu_items)
 		index = menu.show()
 
 		if index == 0:
@@ -22,7 +22,7 @@ def manage_countries():
 				break
 			country_menu_title = "Select country to remove:"
 			country_menu_items = [country[1] for country in countries]
-			country_menu = create_menu(country_menu_title, country_menu_items)
+			country_menu = basic_menu(country_menu_title, country_menu_items)
 			country_index = country_menu.show()
 			country_id = countries[country_index][0]
 			remove_country(country_id)
@@ -41,7 +41,7 @@ def manage_cities():
 
 		select_menu_title = "Select an option"
 		select_menu_items = ["Add City", "Remove City", "Edit City", "Back"]
-		menu = create_menu(select_menu_title, select_menu_items)
+		menu = basic_menu(select_menu_title, select_menu_items)
 		index = menu.show()
 
 		if index == 0:
@@ -68,7 +68,7 @@ def manage_cities():
 			while True:
 				city_menu_title = "Select city to edit (Back to go back)"
 				city_menu_items = [city[1] for city in cities]
-				city_menu = create_menu(city_menu_title, city_menu_items)
+				city_menu = basic_menu(city_menu_title, city_menu_items)
 				city_index = city_menu.show()
 
 				if city_index == len(city_menu_items):
@@ -86,7 +86,7 @@ def manage_cities():
 					f"Edit Wealth Factor (Current: {city_wealth_factor})",
 					"Back"
 				]
-				edit_menu = create_menu(edit_menu_title, edit_menu_items)
+				edit_menu = basic_menu(edit_menu_title, edit_menu_items)
 				edit_index = edit_menu.show()
 
 				if edit_index == 0:
@@ -108,7 +108,7 @@ def manage_shops():
     while True:
         select_menu_title = "Select an option"
         select_menu_items = ["Add Shop", "Remove Shop", "Edit Shop", "Back"]
-        menu = create_menu(select_menu_title, select_menu_items)
+        menu = basic_menu(select_menu_title, select_menu_items)
         index = menu.show()
 
         if index == 0:
@@ -136,7 +136,7 @@ def manage_shops():
             if shops:
                 print(colored("Select shop to remove:", attrs=['bold']))
                 shop_menu_items = [shop[1] for shop in shops]  # Assuming shop name is at index 1
-                shop_menu = create_menu("Shop Menu", shop_menu_items)
+                shop_menu = basic_menu("Shop Menu", shop_menu_items)
                 shop_index = shop_menu.show()
                 shop_id = shops[shop_index][0]
 
@@ -161,7 +161,7 @@ def manage_shops():
             if shops:
                 print(colored("Select shop to edit:", attrs=['bold']))
                 shop_menu_items = [shop[1] for shop in shops]  # Assuming shop name is at index 1
-                shop_menu = create_menu("Shop Menu", shop_menu_items)
+                shop_menu = basic_menu("Shop Menu", shop_menu_items)
                 shop_index = shop_menu.show()
                 shop_id = shops[shop_index][0]
 
@@ -224,7 +224,7 @@ def manage_items():
 
 		select_menu_title = "Select an option"
 		select_menu_items = ["Add Item", "Remove Item", "Edit Item Price", "Edit Item Stock", "Back"]
-		menu = create_menu(select_menu_title, select_menu_items)
+		menu = basic_menu(select_menu_title, select_menu_items)
 		index = menu.show()
 
 		if index == 0:

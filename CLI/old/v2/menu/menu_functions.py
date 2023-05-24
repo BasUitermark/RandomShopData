@@ -38,6 +38,6 @@ def perform_data_action(choice):
 def show_currency_menu():
     currency_menu_title = "Currency Menu"
     currency_menu_items = ["Simulate Currency", "View Currency History", "Back"]
-    currency_menu = create_menu(currency_menu_title, currency_menu_items)
+    currency_menu = basic_menu(currency_menu_title, currency_menu_items)
     currency_menu.show()
     return currency_menu.chosen_menu_index

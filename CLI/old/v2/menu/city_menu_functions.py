@@ -1,5 +1,5 @@
 from database.database_operation import *
-from .functions import create_menu, select_country_menu
+from .functions import basic_menu, select_country_menu
 from termcolor import colored
 
 
@@ -24,7 +24,7 @@ def remove_city_prompt():
 
     city_menu_items = [f"{city.name}" for city in cities]
     city_menu_items.append("Back")
-    city_menu = create_menu("Select a city to remove", city_menu_items)
+    city_menu = basic_menu("Select a city to remove", city_menu_items)
     city_choice = city_menu.show()
 
     if city_choice == len(city_menu_items) - 1:
@@ -42,7 +42,7 @@ def edit_city_prompt():
 
     city_menu_items = [f"{city.name}" for city in cities]
     city_menu_items.append("Back")
-    city_menu = create_menu("Select a city to edit", city_menu_items)
+    city_menu = basic_menu("Select a city to edit", city_menu_items)
     city_choice = city_menu.show()
 
     if city_choice == len(city_menu_items) - 1:
@@ -64,7 +64,7 @@ def manage_cities():
     while True:
         city_menu_title = "Manage Cities"
         city_menu_items = ["Add City", "Remove City", "Edit City", "Back"]
-        city_menu = create_menu(city_menu_title, city_menu_items)
+        city_menu = basic_menu(city_menu_title, city_menu_items)
         city_choice = city_menu.show()
 
         if city_choice == 0:

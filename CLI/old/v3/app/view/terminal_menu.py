@@ -11,7 +11,7 @@ import os
 from termcolor import colored
 from time import sleep
 
-def create_menu(title, menu_entries, color='yellow'):
+def basic_menu(title, menu_entries, color='yellow'):
     menu_cursor = "> "
     menu_cursor_style = ("fg_yellow", "bold")
     menu_highlight_style = ("fg_blue", "bold")
@@ -98,7 +98,7 @@ def manage_entity(session, entity, dependencies=[], parent_entity=None):
             parent_entity = context[parent_entity_key]
 
         menu_entries = ["Add", "Update", "Delete", "Select", "Go back"]
-        menu = create_menu(f"Manage {entity}", menu_entries)
+        menu = basic_menu(f"Manage {entity}", menu_entries)
         menu_choice = menu.show()
         clear_terminal()
 
@@ -118,7 +118,7 @@ def choose_entity(session, entity, context, parent_entity=None):
         clear_terminal()
         return
     menu_entries += ['Go back']
-    menu = create_menu(f"Select {entity}", menu_entries)
+    menu = basic_menu(f"Select {entity}", menu_entries)
     menu_choice = menu.show()
     clear_terminal()
 
@@ -145,7 +145,7 @@ def choose_entity(session, entity, context, parent_entity=None):
 def handle_manage_operations(session):
     while True:
         main_menu_entries = ["Kingdom", "City", "Shop", "Item", "Item Type", "Shop Type", "Go back"]
-        main_menu = create_menu("Manage World", main_menu_entries)
+        main_menu = basic_menu("Manage World", main_menu_entries)
         main_menu_choice = main_menu.show()
         clear_terminal()
 
@@ -174,7 +174,7 @@ def display_menu(session):
     clear_terminal()
     while True:
         menu_entries = ["Manage World", "Show Data", "Import/Export", "Exit"]
-        menu = create_menu("Main Menu", menu_entries)
+        menu = basic_menu("Main Menu", menu_entries)
         menu_choice = menu.show()
         clear_terminal()
 

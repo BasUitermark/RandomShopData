@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from app.model.tables import Base
+from model.base import Base
 from termcolor import colored
 
 DATABASE_NAME = "virtual_economy.sqlite"

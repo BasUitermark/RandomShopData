@@ -1,5 +1,5 @@
 from database.database_operation import *
-from .functions import create_menu
+from .functions import basic_menu
 from termcolor import colored
 
 
@@ -17,7 +17,7 @@ def remove_country_prompt():
 
     country_menu_items = [f"{country.name}" for country in countries]
     country_menu_items.append("Back")
-    country_menu = create_menu("Select a country to remove", country_menu_items)
+    country_menu = basic_menu("Select a country to remove", country_menu_items)
     country_choice = country_menu.show()
 
     if country_choice == len(country_menu_items) - 1:
@@ -35,7 +35,7 @@ def edit_country_prompt():
 
     country_menu_items = [f"{country.name}" for country in countries]
     country_menu_items.append("Back")
-    country_menu = create_menu("Select a country to edit", country_menu_items)
+    country_menu = basic_menu("Select a country to edit", country_menu_items)
     country_choice = country_menu.show()
 
     if country_choice == len(country_menu_items) - 1:
@@ -50,7 +50,7 @@ def manage_countries():
     while True:
         country_menu_title = "Manage Countries"
         country_menu_items = ["Add Country", "Remove Country", "Edit Country", "Back"]
-        country_menu = create_menu(country_menu_title, country_menu_items)
+        country_menu = basic_menu(country_menu_title, country_menu_items)
         country_choice = country_menu.show()
 
         if country_choice == 0:

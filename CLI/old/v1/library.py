@@ -2,7 +2,7 @@ from simple_term_menu import TerminalMenu
 
 DATABASE_NAME = 'mydatabase.sqlite'
 
-def create_menu(title, menu_entries):
+def basic_menu(title, menu_entries):
     menu_cursor = "> "
     menu_cursor_style = ("fg_yellow", "bold")
     menu_highlight_style = ("fg_blue", "bold")
@@ -19,7 +19,7 @@ def select_country(countries):
 	country_menu_title = "Select Country"
 	country_menu_items = [country[1] for country in countries]
 	country_menu_items.append("Back")  # Add the "Back" option
-	country_menu = create_menu(country_menu_title, country_menu_items)
+	country_menu = basic_menu(country_menu_title, country_menu_items)
 	country_index = country_menu.show()
 	if country_index == len(countries):  # If "Back" option is chosen
 		return None  # Return None to indicate going back
@@ -31,7 +31,7 @@ def select_city(cities):
 	city_menu_title = "Select a city:"
 	city_menu_items = [city[1] for city in cities]
 	city_menu_items.append("Back")  # Add the "Back" option
-	city_menu = create_menu(city_menu_title, city_menu_items)
+	city_menu = basic_menu(city_menu_title, city_menu_items)
 	city_index = city_menu.show()
 	if city_index == len(cities):  # If "Back" option is chosen
 		return None  # Return None to indicate going back
@@ -43,7 +43,7 @@ def select_shop(shops):
 	shop_menu_title = "Select a shop:"
 	shop_menu_items = [shop[1] for shop in shops]
 	shop_menu_items.append("Back")  # Add the "Back" option
-	shop_menu = create_menu(shop_menu_title, shop_menu_items)
+	shop_menu = basic_menu(shop_menu_title, shop_menu_items)
 	shop_index = shop_menu.show()
 	if shop_index == len(shops):  # If "Back" option is chosen
 		return None  # Return None to indicate going back
@@ -55,7 +55,7 @@ def select_item(items):
 	item_menu_title = "Select a item:"
 	item_menu_items = [item[1] for item in items]
 	item_menu_items.append("Back")  # Add the "Back" option
-	item_menu = create_menu(item_menu_title, item_menu_items)
+	item_menu = basic_menu(item_menu_title, item_menu_items)
 	item_index = item_menu.show()
 	if item_index == len(items):  # If "Back" option is chosen
 		return None  # Return None to indicate going back

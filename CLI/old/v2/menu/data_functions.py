@@ -1,5 +1,5 @@
 import pandas as pd
-from .functions import create_menu, select_country_menu, select_city_menu, select_shop_menu, print_colored_dataframe, print_formatted_dataframe
+from .functions import basic_menu, select_country_menu, select_city_menu, select_shop_menu, print_colored_dataframe, print_formatted_dataframe
 from database.database_operation import get_countries, get_cities, get_shops, get_items, get_item_types, get_item_type_by_id
 
 def show_data():
@@ -7,7 +7,7 @@ def show_data():
         data_menu_title = "Show Data"
         data_menu_items = ["Show All Countries", "Show Cities of a Country", "Show Shops of a City",
                            "Show Items of a Shop", "Show Item Types", "Back"]
-        data_menu = create_menu(data_menu_title, data_menu_items)
+        data_menu = basic_menu(data_menu_title, data_menu_items)
         data_choice = data_menu.show()
 
         if data_choice == 0:

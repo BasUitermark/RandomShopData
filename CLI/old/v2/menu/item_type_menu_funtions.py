@@ -1,5 +1,5 @@
 from database.database_operation import *
-from .functions import create_menu
+from .functions import basic_menu
 from termcolor import colored
 
 
@@ -22,7 +22,7 @@ def remove_item_type_prompt():
 
     item_type_menu_items = [f"{item_type.type} - {item_type.sub_type}" for item_type in item_types]
     item_type_menu_items.append("Back")
-    item_type_menu = create_menu("Select an item type to remove", item_type_menu_items)
+    item_type_menu = basic_menu("Select an item type to remove", item_type_menu_items)
     item_type_choice = item_type_menu.show()
 
     if item_type_choice == len(item_type_menu_items) - 1:
@@ -40,7 +40,7 @@ def edit_item_type_prompt():
 
     item_type_menu_items = [f"{item_type.type} - {item_type.sub_type}" for item_type in item_types]
     item_type_menu_items.append("Back")
-    item_type_menu = create_menu("Select an item type to edit", item_type_menu_items)
+    item_type_menu = basic_menu("Select an item type to edit", item_type_menu_items)
     item_type_choice = item_type_menu.show()
 
     if item_type_choice == len(item_type_menu_items) - 1:
@@ -61,7 +61,7 @@ def manage_item_types():
     while True:
         item_type_menu_title = "Manage Item Types"
         item_type_menu_items = ["Add Item Type", "Remove Item Type", "Edit Item Type", "Back"]
-        item_type_menu = create_menu(item_type_menu_title, item_type_menu_items)
+        item_type_menu = basic_menu(item_type_menu_title, item_type_menu_items)
         item_type_choice = item_type_menu.show()
 
         if item_type_choice == 0:

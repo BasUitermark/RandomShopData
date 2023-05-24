@@ -4,7 +4,7 @@ from simple_term_menu import TerminalMenu
 from termcolor import colored
 from tabulate import tabulate
 
-def create_menu(title, menu_entries):
+def basic_menu(title, menu_entries):
     menu_cursor = "> "
     menu_cursor_style = ("fg_yellow", "bold")
     menu_highlight_style = ("fg_blue", "bold")
@@ -21,7 +21,7 @@ def select_country_menu():
     countries = get_countries()
     country_menu_items = [f"{country.name}" for country in countries]
     country_menu_items.append("Back")
-    country_menu = create_menu("Select a country", country_menu_items)
+    country_menu = basic_menu("Select a country", country_menu_items)
     country_choice = country_menu.show()
 
     if country_choice == len(country_menu_items) - 1:
@@ -34,7 +34,7 @@ def select_city_menu(country_id):
     cities = get_cities_by_country(country_id)
     city_menu_items = [f"{city.name}" for city in cities]
     city_menu_items.append("Back")
-    city_menu = create_menu("Select a city", city_menu_items)
+    city_menu = basic_menu("Select a city", city_menu_items)
     city_choice = city_menu.show()
 
     if city_choice == len(city_menu_items) - 1:
@@ -47,7 +47,7 @@ def select_shop_menu(city_id):
     shops = get_shops_by_city(city_id)
     shop_menu_items = [f"{shop.name}" for shop in shops]
     shop_menu_items.append("Back")
-    shop_menu = create_menu("Select a shop", shop_menu_items)
+    shop_menu = basic_menu("Select a shop", shop_menu_items)
     shop_choice = shop_menu.show()
 
     if shop_choice == len(shop_menu_items) - 1:

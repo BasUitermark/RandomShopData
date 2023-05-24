@@ -1,16 +1,22 @@
-from base_handler import BaseHandler
+from .base_handler import BaseHandler
 from model.shop_type import ShopType
 
 class ShopTypeHandler(BaseHandler):
+    model = ShopType
+
     def add(self, session, shop_type):
+        shop_type = ShopType(shop_type=shop_type)
         session.add(shop_type)
         session.commit()
 
-    def update(self, session, shop_type_id, new_data):
-        shop_type = session.query(ShopType).filter(ShopType.id == shop_type_id).first()
-        for key, value in new_data.items():
-            setattr(shop_type, key, value)
+    def update(self, session, shop_type_id, new_shop_type=None):
+        shop_type = session.query(ShopType).filter(ShopType.id == shop_type_id).one()
+
+        if new_shop_type is not None:
+            shop_type.shop_type = new_shop_type
+
         session.commit()
+
 
     def delete(self, session, shop_type_id):
         shop_type = session.query(ShopType).filter(ShopType.id == shop_type_id).first()

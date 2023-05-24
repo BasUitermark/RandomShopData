@@ -1,8 +1,31 @@
 # view/city_view.py
 from controller.handle_kingdom import KingdomHandler
 from controller.handle_city import CityHandler
-from terminal_menu import create_menu
+from .select_view import select_city, select_kingdom, basic_menu, clear_terminal
 from termcolor import colored
+
+
+def manage_city(session):
+    while True:
+        manage_menu_entries = ["Add City", "Update City", "Delete City", "Show Citiess", "Go back"]
+        manage_menu = basic_menu("Manage City", manage_menu_entries)
+        manage_menu_choice = manage_menu.show()
+        clear_terminal()
+
+        if manage_menu_choice == 0:  # "Add City"
+            add_city_view(session)
+
+        elif manage_menu_choice == 1:  # "Update City"
+            update_city_view(session)
+
+        elif manage_menu_choice == 2:  # "Delete City"
+            delete_city_view(session)
+
+        elif manage_menu_choice == 3:  # "Show Citys"
+            show_all_in_kingdom_view(session)
+
+        elif manage_menu_choice == 4:  # "Go back"
+            break
 
 
 def add_city_view(session):
@@ -11,23 +34,17 @@ def add_city_view(session):
     city_handler = CityHandler()
 
     # Select a Kingdom
-    kingdoms = kingdom_handler.select_all(session)
-    kingdom_menu = create_menu("Select a Kingdom:", [kingdom.name for kingdom in kingdoms])
-    selected_kingdom_index = kingdom_menu.show()
-    selected_kingdom = kingdoms[selected_kingdom_index]
+    selected_kingdom = select_kingdom(session, kingdom_handler)
+    if selected_kingdom is None:
+        return
 
-    # Select a City
-    cities = city_handler.select_by_kingdom(session, selected_kingdom.id)
-    city_menu = create_menu("Select a City:", [city.name for city in cities])
-    selected_city_index = city_menu.show()
-    selected_city = cities[selected_city_index]
-
-    # Enter Shop Name
+    # Enter name & population
     city_name = input(colored("Enter the city name: ", attrs=['bold']))
     city_population = input(colored("Enter the city population: ", attrs=['bold']))
+    city_wealth = input(colored("Enter the city wealth factor: ", attrs=['bold']))
 
     # Add the city
-    city_handler.add(session, city_name, city_population, selected_city.id)
+    city_handler.add(session, city_name, city_population, city_wealth, selected_kingdom.id)
     print(colored("Shop added successfully!", 'green'))
 
 
@@ -37,19 +54,17 @@ def update_city_view(session):
     kingdom_handler = KingdomHandler()
 
 	# Select a Kingdom
-    kingdoms = kingdom_handler.select_all(session)
-    kingdom_menu = create_menu("Select a Kingdom:", [kingdom.name for kingdom in kingdoms])
-    selected_kingdom_index = kingdom_menu.show()
-    selected_kingdom = kingdoms[selected_kingdom_index]
+    selected_kingdom = select_kingdom(session, kingdom_handler)
+    if selected_kingdom is None:
+        return
 
     # Select a City
-    citys = city_handler.select_by_kingdom(session, selected_kingdom.id)
-    city_menu = create_menu("Select a City to Update:", [city.name for city in citys])
-    selected_city_index = city_menu.show()
-    selected_city = citys[selected_city_index]
+    selected_city = select_city(session, city_handler, selected_kingdom.id)
+    if selected_city is None:
+        return
 
     # Choose whether to update city details or migrate the city
-    action_menu = create_menu("Choose an action:", ["Update City Details", "Migrate City"])
+    action_menu = basic_menu("Choose an action:", ["Update City Details", "Migrate City"])
     selected_action_index = action_menu.show()
 
     if selected_action_index == 0:  # User selected "Update City Details"
@@ -73,51 +88,54 @@ def migrate_city_view(session, selected_city):
     city_handler = CityHandler()
 
     # Select a new Kingdom
-    kingdoms = kingdom_handler.select_all(session)
-    kingdom_menu = create_menu("Select a new Kingdom:", [kingdom.name for kingdom in kingdoms])
-    selected_kingdom_index = kingdom_menu.show()
-    selected_kingdom = kingdoms[selected_kingdom_index]
+    selected_kingdom = select_kingdom(session, kingdom_handler)
+    if selected_kingdom is None:
+        return   
 
     # Migrate the city
     city_handler.update(session, selected_city.id, selected_city.name, selected_city.population, selected_kingdom.id)
-    print(colored("Shop migrated successfully!", 'green'))
+    print(colored("City migrated successfully!", 'green'))
 
 
 def delete_city_view(session):
     # Create handler
+    kingdom_handler = KingdomHandler()
     city_handler = CityHandler()
 
-    # Select a Shop
-    citys = city_handler.select_all(session)
-    city_menu = create_menu("Select a Shop to Delete:", [city.name for city in citys])
-    selected_city_index = city_menu.show()
-    selected_city = citys[selected_city_index]
+	# Select a Kingdom
+    selected_kingdom = select_kingdom(session, kingdom_handler)
+    if selected_kingdom is None:
+        return
+
+    # Select a City
+    selected_city = select_city(session, city_handler, selected_kingdom.id)
+    if selected_city is None:
+        return
 
     # Confirm deletion
-    confirmation_menu = create_menu("Are you sure you want to delete this city?", ["Yes", "No"])
+    confirmation_menu = basic_menu("Are you sure you want to delete this city?", ["Yes", "No"])
     confirmation_index = confirmation_menu.show()
 
     if confirmation_index == 0:  # User selected "Yes"
         # Delete the city
         city_handler.delete(session, selected_city.id)
-        print("Shop deleted successfully!")
+        print(colored("City deleted successfully!", 'green'))
     else:
-        print("Shop deletion cancelled.")
+        print(colored("City deletion cancelled.", 'yellow'))
 
 
 
-def show_all_in_city_view(session):
+def show_all_in_kingdom_view(session):
     # Create handlers
     kingdom_handler = KingdomHandler()
     city_handler = CityHandler()
 
-    # Select a Kingdom
-    kingdoms = kingdom_handler.select_all(session)
-    kingdom_menu = create_menu("Select a Kingdom:", [kingdom.name for kingdom in kingdoms])
-    selected_kingdom_index = kingdom_menu.show()
-    selected_kingdom = kingdoms[selected_kingdom_index]
+	# Select a Kingdom
+    selected_kingdom = select_kingdom(session, kingdom_handler)
+    if selected_kingdom is None:
+        return
 
     # Show all citys in the selected kingdom
     citys = city_handler.select_by_kingdom(session, selected_kingdom.id)
     for city in citys:
-        print(city)
+        print(colored(city.name, 'light_green'))

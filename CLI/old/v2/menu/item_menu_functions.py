@@ -1,5 +1,5 @@
 from database.database_operation import *
-from .functions import create_menu, select_city_menu, select_country_menu, select_shop_menu
+from .functions import basic_menu, select_city_menu, select_country_menu, select_shop_menu
 from termcolor import colored
 
 
@@ -26,7 +26,7 @@ def add_item_prompt():
     item_types = get_item_types()
     item_type_menu_items = [f"{item_type.type} - {item_type.sub_type}" for item_type in item_types]
     item_type_menu_items.append("Back")
-    item_type_menu = create_menu("Select an item type", item_type_menu_items)
+    item_type_menu = basic_menu("Select an item type", item_type_menu_items)
     item_type_choice = item_type_menu.show()
 
     if item_type_choice == len(item_type_menu_items) - 1:
@@ -46,7 +46,7 @@ def remove_item_prompt():
 
     item_menu_items = [f"{item.name}" for item in items]
     item_menu_items.append("Back")
-    item_menu = create_menu("Select an item to remove", item_menu_items)
+    item_menu = basic_menu("Select an item to remove", item_menu_items)
     item_choice = item_menu.show()
 
     if item_choice == len(item_menu_items) - 1:
@@ -64,7 +64,7 @@ def edit_item_prompt():
 
     item_menu_items = [f"{item.name}" for item in items]
     item_menu_items.append("Back")
-    item_menu = create_menu("Select an item to edit", item_menu_items)
+    item_menu = basic_menu("Select an item to edit", item_menu_items)
     item_choice = item_menu.show()
 
     if item_choice == len(item_menu_items) - 1:
@@ -92,7 +92,7 @@ def edit_item_prompt():
     item_types = get_item_types()
     item_type_menu_items = [f"{item_type.type} - {item_type.sub_type}" for item_type in item_types]
     item_type_menu_items.append("Back")
-    item_type_menu = create_menu("Select an item type", item_type_menu_items)
+    item_type_menu = basic_menu("Select an item type", item_type_menu_items)
     item_type_choice = item_type_menu.show()
 
     if item_type_choice == len(item_type_menu_items) - 1:
@@ -109,7 +109,7 @@ def manage_items():
     while True:
         item_menu_title = "Manage Items"
         item_menu_items = ["Add Item", "Remove Item", "Edit Item", "Back"]
-        item_menu = create_menu(item_menu_title, item_menu_items)
+        item_menu = basic_menu(item_menu_title, item_menu_items)
         item_choice = item_menu.show()
 
         if item_choice == 0:

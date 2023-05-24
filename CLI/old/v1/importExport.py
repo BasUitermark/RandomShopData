@@ -16,7 +16,7 @@ def import_item_list():
 
 	menu_title = "Choose CSV File to Import:"
 	menu_items = [f[:-4] for f in import_files]
-	menu = create_menu(menu_title, menu_items)
+	menu = basic_menu(menu_title, menu_items)
 	file_index = menu.show()
 
 	file_name = import_files[file_index]
