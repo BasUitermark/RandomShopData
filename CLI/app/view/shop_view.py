@@ -88,7 +88,7 @@ def update_shop_view(session):
 
     if selected_action_index == 0:  # User selected "Update Shop Details"
         # Enter new Shop Name
-        new_shop_name = input("Enter the new shop name: ")
+        new_shop_name = input(colored("Enter the new shop name: ", attrs=['bold']))
 
         # Select a Shop Type
         selected_shop_type = select_shop_type(session, shop_type_handler)
@@ -153,9 +153,9 @@ def delete_shop_view(session):
     if confirmation_index == 0:  # User selected "Yes"
         # Delete the shop
         shop_handler.delete(session, selected_shop.id)
-        print("Shop deleted successfully!")
+        print(colored("Shop deleted successfully!", 'green'))
     else:
-        print("Shop deletion cancelled.")
+        print(colored("Shop deletion cancelled.", 'yellow'))
 
 
 def show_all_in_city_view(session):

@@ -36,3 +36,7 @@ class ShopHandler(BaseHandler):
     def select_all(self, session):
         cities = session.query(Shop).all()
         return cities
+    
+    def select_by_name(self, session, shop_name):
+        shop = session.query(Shop).filter(Shop.name == shop_name).first()
+        return shop

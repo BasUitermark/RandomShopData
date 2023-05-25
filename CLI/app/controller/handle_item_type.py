@@ -47,3 +47,7 @@ class ItemTypeHandler(BaseHandler):
     def select_all(self, session):
         item_types = session.query(ItemType).all()
         return item_types
+    
+    def select_by_name(self, session, shop_name):
+        shop = session.query(ItemType).filter(ItemType.item_type == shop_name).first()
+        return shop

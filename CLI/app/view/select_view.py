@@ -61,12 +61,13 @@ def select_shops(session, city_handler, shop_handler, kingdom_handler):
 
     # Select a kingdom
     selected_kingdom = select_kingdom(session, kingdom_handler)
+    clear_terminal()
     if selected_kingdom is None:
         return
 
-
     # Select a city
     selected_city = select_city(session, city_handler, selected_kingdom.id)
+    clear_terminal()
     if selected_city is None:
         return
 
@@ -74,7 +75,8 @@ def select_shops(session, city_handler, shop_handler, kingdom_handler):
     available_shops = shop_handler.select_by_city(session, selected_city.id)
 
     while available_shops:
-        shop_menu = basic_menu("Select a Shop to add to the export list (or press q to finish):", [shop.name for shop in available_shops] + ["Done"])
+        shop_menu = basic_menu("Select a Shop to add to the export list:", [shop.name for shop in available_shops] + ["Done"])
+        clear_terminal()
         selected_shop_index = shop_menu.show()
 
         if selected_shop_index == len(available_shops):  # User selected "Done"
@@ -85,6 +87,7 @@ def select_shops(session, city_handler, shop_handler, kingdom_handler):
         
         # Remove the selected shop from the available shops list
         available_shops.remove(selected_shop)
+        print(colored(selected_shop.name, 'yellow'))
 
     if not selected_shops:
         print(colored("No shop selected.", 'yellow'))
@@ -109,7 +112,7 @@ def select_item_type(session, item_type_handler):
     if not item_types:
         print(colored("No item types found.", 'yellow'))
         return None
-    item_type_menu = basic_menu("Select an Item Type:", [item_type.name for item_type in item_types])
+    item_type_menu = basic_menu("Select an Item Type:", [f"{item_type.item_type} - {item_type.sub_type}" for item_type in item_types])
     selected_item_type_index = item_type_menu.show()
     selected_item_type = item_types[selected_item_type_index]
 

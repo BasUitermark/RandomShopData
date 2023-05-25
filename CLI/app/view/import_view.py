@@ -7,7 +7,7 @@ from controller.handle_shop import ShopHandler
 from controller.handle_shop_type import ShopTypeHandler
 from controller.handle_city import CityHandler
 from controller.handle_kingdom import KingdomHandler
-from view.select_view import select_kingdom, select_city, select_shop, select_shop_type, basic_menu
+from view.select_view import select_kingdom, select_city, select_shop, select_shop_type, basic_menu, clear_terminal
 from termcolor import colored
 import csv
 import os
@@ -40,7 +40,7 @@ def manage_import(session):
 
         # Select or Add a Shop Type
         shop_types = shop_type_handler.select_all(session)
-        shop_type_names = [shop_type.name for shop_type in shop_types] + ["Add new shop type"]
+        shop_type_names = [shop_type.shop_type for shop_type in shop_types] + ["Add new shop type"]
 
         shop_type_menu = basic_menu("Select a Shop Type:", shop_type_names)
         selected_shop_type_index = shop_type_menu.show()
@@ -70,7 +70,7 @@ def manage_import(session):
         shop_handler.add(session, shop_name, selected_shop_type.id, selected_city.id)
         print(colored("Shop added successfully!", 'green'))
         
-        selected_shop = shop_handler.select(session, shop_name)
+        selected_shop = shop_handler.select_by_name(session, shop_name)
         
     elif selected_option_index == 1:  # Add to existing shop
         selected_kingdom = select_kingdom(session, kingdom_handler)
@@ -101,7 +101,7 @@ def manage_import(session):
         return
 
     # Prompt for CSV file
-    file_menu = basic_menu(colored("Select a CSV file to import:", "bold"), files)
+    file_menu = basic_menu("Select a CSV file to import:", files)
     selected_file_index = file_menu.show()
     csv_file_path = os.path.join(directory, files[selected_file_index])
 
@@ -112,19 +112,29 @@ def manage_import(session):
         for row in reader:
             # Get or create the item type
             item_type_name, item_sub_type = row['item type'].split(';')
-            item_type = item_type_handler.select(session, item_type_name)
+            item_type = item_type_handler.select_by_name(session, item_type_name)
 
             if item_type is None:  # Item type does not exist, create it
-                min_amount = float(input(colored(f"Enter the minimum amount for {item_type_name} items: ", "bold")))
-                max_amount = float(input(colored(f"Enter the maximum amount for {item_type_name} items: ", "bold")))
-                wealth_indicator = float(input(colored(f"Enter the wealth indicator for {item_type_name} items: ", "bold")))
+                print(colored(f"Adding new type {item_type_name} {item_sub_type}"))
+                min_amount = float(input(colored(f"Enter the minimum amount for type {item_type_name} {item_sub_type}: ", attrs=['bold'])))
+                max_amount = float(input(colored(f"Enter the maximum amount for type {item_type_name} {item_sub_type}: ", attrs=['bold'])))
+                wealth_indicator = float(input(colored(f"Enter the wealth indicator for type {item_type_name} {item_sub_type}: ", attrs=['bold'])))
                 item_type_handler.add(session, item_type_name, item_sub_type, min_amount, max_amount, wealth_indicator)
                 item_type = item_type_handler.select(session, item_type_name)
+                clear_terminal()
 
             # Convert prices to copper
             current_price_copper = convert_to_copper(row['current price'])
             min_price_copper = convert_to_copper(row['minimum price'])
             max_price_copper = convert_to_copper(row['maximum price'])
+
+            if item_type is None:
+                print("Could not fetch item_type.")
+                continue
+
+            if selected_shop is None:
+                print("Could not fetch shop.")
+                continue
 
             # Add the item
             item_handler.add(

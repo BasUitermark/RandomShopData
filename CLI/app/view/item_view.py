@@ -7,10 +7,10 @@ from controller.handle_item import ItemHandler
 from controller.handle_item_type import ItemTypeHandler
 from .select_view import basic_menu, clear_terminal
 from termcolor import colored
+import pandas as pd
 
 
 def manage_item(session):
-    global breadcrumbs
     while True:
         manage_menu_entries = ["Add Item", "Update Item", "Delete Item", "Show Items", "Go back"]
         manage_menu = basic_menu("Manage Item", manage_menu_entries)
@@ -18,24 +18,16 @@ def manage_item(session):
         clear_terminal()
 
         if manage_menu_choice == 0:  # "Add Item"
-            breadcrumbs.append("Add Item")
             add_item_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 1:  # "Update Item"
-            breadcrumbs.append("Update Item")
             update_item_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 2:  # "Delete Item"
-            breadcrumbs.append("Delete Item")
             delete_item_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 3:  # "Show Items"
-            breadcrumbs.append("Show Items")
             show_all_in_shop_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 4:  # "Go back"
             break
@@ -189,28 +181,51 @@ def show_all_in_shop_view(session):
     # Create handlers
     shop_handler = ShopHandler()
     item_handler = ItemHandler()
+    item_type_handler = ItemTypeHandler()
     kingdom_handler = KingdomHandler()
     city_handler = CityHandler()
 
 	# Select a Kingdom
     selected_kingdom = select_kingdom(session, kingdom_handler)
+    clear_terminal()
     if selected_kingdom is None:
         return
 
     # Select a City
     selected_city = select_city(session, city_handler, selected_kingdom.id)
+    clear_terminal()
     if selected_city is None:
         return
 
     # Select a Shop
     selected_shop = select_shop(session, shop_handler, selected_city.id)
+    clear_terminal()
     if selected_shop is None:
         return
 
     # Show all items in the selected shop
     items = item_handler.select_by_shop(session, selected_shop.id)
+    clear_terminal()
     if items is None:
         return
 
+    # Initialize items_list
+    items_list = []
+
     for item in items:
-        print(item)
+        item_type = item_type_handler.select(session, item.item_type_id)
+        item_dict = {
+            'Name': item.name,
+            'Price': int(item.current_price),
+            'Min. price': int(item.min_price),
+            'Max. price': int(item.max_price),
+            'Amount': int(item.current_amount),
+            'Item type': item_type.item_type + " " + item_type.sub_type
+        }
+        items_list.append(item_dict)
+    
+    # Convert to pandas DataFrame and print
+    pd.set_option('display.max_columns', None)
+    df = pd.DataFrame(items_list)
+    df2 = df.to_string(index=False)
+    print(df2)

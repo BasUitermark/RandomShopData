@@ -5,7 +5,6 @@ from termcolor import colored
 
 
 def manage_item_type(session):
-    global breadcrumbs
     while True:
         manage_menu_entries = ["Add Item Type", "Update Item Type", "Delete Item Type", "Show Item Types", "Go back"]
         manage_menu = basic_menu("Manage Item Type", manage_menu_entries)
@@ -13,24 +12,16 @@ def manage_item_type(session):
         clear_terminal()
 
         if manage_menu_choice == 0:  # "Add Item Type"
-            breadcrumbs.append("Add Item Type")
             add_item_type_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 1:  # "Update Item Type"
-            breadcrumbs.append("Update Item Type")
             update_item_type_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 2:  # "Delete Item Type"
-            breadcrumbs.append("Delete Item Type")
             delete_item_type_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 3:  # "Show Item Types"
-            breadcrumbs.append("Show Item Types")
             show_all_item_types_view(session)
-            breadcrumbs = breadcrumbs[:-1]
 
         elif manage_menu_choice == 4:  # "Go back"
             break
