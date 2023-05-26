@@ -180,4 +180,4 @@ def show_all_in_city_view(session):
         return
 
     for shop in shops:
-        print(shop)
+        print(colored(shop.name, 'green',attrs=['bold']), colored(shop.shop_type.shop_type, 'green'))
