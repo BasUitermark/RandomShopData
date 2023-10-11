@@ -1,6 +1,7 @@
 from controller.handle_shop import ShopHandler
 from controller.handle_city import CityHandler
 from controller.handle_kingdom import KingdomHandler
+from controller.handle_item import ItemHandler
 from termcolor import colored
 
 def display_hierarchical_view(session):
@@ -8,6 +9,7 @@ def display_hierarchical_view(session):
     kingdom_handler = KingdomHandler()
     city_handler = CityHandler()
     shop_handler = ShopHandler()
+    item_handler = ItemHandler()
 
     # Get all kingdoms
     kingdoms = kingdom_handler.select_all(session)
@@ -22,4 +24,6 @@ def display_hierarchical_view(session):
             # Get all shops in the current city
             shops = shop_handler.select_by_city(session, city.id)
             for shop in shops:
-                print(colored(">\t\t", attrs=['bold']), colored(shop.name, 'green', attrs=['bold']))
+                items = item_handler.select_by_shop(session, shop.id)
+                empty = "Filled" if items else "Empty"
+                print(colored(">\t\t", attrs=['bold']), colored(shop.name, 'green', attrs=['bold']), f"({empty})")
